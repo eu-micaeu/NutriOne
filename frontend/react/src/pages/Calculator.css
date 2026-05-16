@@ -1,0 +1,109 @@
+.calculator-main {
+  flex: 1;
+  padding: 2rem 1rem 3rem;
+}
+
+.calculator-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+
+.calculator-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.session-intro {
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.session-intro h2 {
+  margin: 0 0 0.55rem;
+  font-size: 1.55rem;
+  color: var(--text-primary);
+}
+
+.session-intro p:last-child {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.info-card {
+  background: var(--surface-primary);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.info-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .calculator-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .info-section {
+    order: 2;
+  }
+
+  .calculator-section {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .calculator-main {
+    padding: 1rem;
+  }
+
+  .calculator-container {
+    gap: 1rem;
+  }
+
+  .info-card {
+    padding: 1rem;
+  }
+
+  .info-card h3 {
+    font-size: 1rem;
+  }
+
+  .info-card p {
+    font-size: 0.9rem;
+  }
+}

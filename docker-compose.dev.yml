@@ -1,0 +1,40 @@
+services:
+  backend:
+    build:
+      context: ./backend/go
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/go:/app
+      - /app/tmp
+    environment:
+      - PORT=8080
+      - GIN_MODE=debug
+    networks:
+      - nutrione-network
+    stdin_open: true
+    tty: true
+
+  frontend:
+    build:
+      context: ./frontend/react
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend/react:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    networks:
+      - nutrione-network
+    environment:
+      - VITE_API_URL=/api
+      - API_TARGET=http://backend:8080
+    stdin_open: true
+    tty: true
+
+networks:
+  nutrione-network:
+    driver: bridge

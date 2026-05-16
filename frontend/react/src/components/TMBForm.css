@@ -1,0 +1,121 @@
+.tmb-form {
+  background: var(--surface-primary);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.required {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+.form-input,
+.form-select {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid rgba(148, 163, 184, 0.18);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  color: var(--text-primary);
+  background: rgba(15, 23, 42, 0.88);
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(138, 164, 255, 0.16);
+}
+
+.form-input:disabled,
+.form-select:disabled {
+  background-color: rgba(148, 163, 184, 0.08);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-select {
+  cursor: pointer;
+}
+
+.form-button {
+  width: 100%;
+  padding: 0.875rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #4f7cff 0%, #8f5cff 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.form-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(79, 124, 255, 0.35);
+}
+
+.form-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.form-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .tmb-form {
+    padding: 1.5rem;
+  }
+
+  .form-button {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+}
