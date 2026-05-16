@@ -7,9 +7,6 @@ export function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-content">
-          <p>
-            <strong>NutriOne</strong> - Calculadora de TMB
-          </p>
           <p className="footer-info">
             Utilizamos a fórmula de <strong>Mifflin-St Jeor</strong> para cálculo da TMB.
           </p>

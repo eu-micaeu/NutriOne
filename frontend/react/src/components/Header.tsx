@@ -10,7 +10,6 @@ export function Header() {
             <img src="/icon.png" alt="NutriOne" className="header-logo" />
             <h1 className="header-title">NutriOne</h1>
           </div>
-          <p className="header-subtitle">Calculadora de TMB</p>
         </div>
       </div>
     </header>
