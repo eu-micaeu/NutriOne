@@ -34,10 +34,6 @@ export function TMBResult({ result, onReset }: TMBResultProps) {
   return (
     <div className="tmb-result-container">
       <div className="result-card main-result">
-        <div className="result-header">
-          <h2>Seu resultado</h2>
-          <span className="badge">Mifflin-St Jeor</span>
-        </div>
         
         <div className="result-value">
           <span className="tmb-number">{tmbValue}</span>
