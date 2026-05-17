@@ -150,6 +150,41 @@
   transform: translateY(0);
 }
 
+.set-goal-btn {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.set-goal-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(79, 124, 255, 0.4);
+}
+
+.set-goal-btn-small {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(155, 178, 255, 0.1);
+  color: #9bb2ff;
+  border: 1px solid #9bb2ff;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.set-goal-btn-small:hover {
+  background: #9bb2ff;
+  color: #0f172a;
+}
+
 @media (max-width: 768px) {
   .main-result {
     padding: 1.5rem;

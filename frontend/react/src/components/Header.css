@@ -1,74 +1,95 @@
 .header {
-  background: rgba(15, 23, 42, 0.88);
+  background: rgba(15, 23, 42, 0.7);
   color: white;
-  padding: 2rem 1rem;
-  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.35);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
-  margin-bottom: 2rem;
-  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 3rem;
+  backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header-content {
-  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .header-logo-section {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.75rem;
 }
 
 .header-logo {
-  width: 3rem;
-  height: 3rem;
+  width: 2.2rem;
+  height: 2.2rem;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-}
 }
 
 .header-title {
   margin: 0;
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .header-actions {
   display: flex;
-  justify-content: center;
   gap: 0.75rem;
-  flex-wrap: wrap;
 }
 
 .session-button {
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(15, 23, 42, 0.28);
-  color: white;
-  padding: 0.7rem 1.1rem;
-  border-radius: 999px;
-  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px; /* Menos arredondado */
+  font-size: 0.9rem;
   font-weight: 600;
-  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
 }
 
 .session-button:hover {
-  transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: var(--primary);
 }
 
 .session-button.active {
-  color: #f4f7ff;
-  background: rgba(148, 163, 184, 0.16);
-  border-color: rgba(148, 163, 184, 0.24);
-  box-shadow: 0 8px 22px rgba(2, 6, 23, 0.18);
+  color: var(--primary);
+  background: rgba(138, 164, 255, 0.1);
+  border-color: var(--primary);
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--danger);
+  border-color: rgba(255, 123, 123, 0.2);
+}
+
+.logout-btn:hover {
+  background: rgba(255, 123, 123, 0.1);
+  border-color: var(--danger);
+  color: var(--danger);
 }
 
 @media (max-width: 768px) {

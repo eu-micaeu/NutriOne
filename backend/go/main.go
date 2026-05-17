@@ -12,6 +12,9 @@ func main() {
 	// Carregar variáveis de ambiente
 	utils.LoadEnvCandidates(".env", "../.env", "../../.env")
 
+	// Inicializar MongoDB
+	config.ConnectDB()
+
 	// Criar router
 	router := gin.Default()
 

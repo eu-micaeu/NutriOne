@@ -1,0 +1,50 @@
+.dashboard-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 2rem 4rem;
+}
+
+.dashboard-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.dashboard-main {
+  width: 100%;
+}
+
+.dashboard-side {
+  width: 100%;
+  position: static;
+}
+
+/* Ajustes para os componentes dentro do Dashboard */
+.dashboard-side .calculator-main {
+  padding: 0;
+}
+
+.dashboard-side .calculator-container {
+  max-width: 100%;
+}
+
+.dashboard-side .info-section {
+  display: none; /* Esconder info extra na dashboard para manter clean */
+}
+
+.dashboard-side .calculator-section {
+  padding: 1.5rem;
+  background: var(--surface-primary);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+}
+
+@media (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-side {
+    position: static;
+  }
+}

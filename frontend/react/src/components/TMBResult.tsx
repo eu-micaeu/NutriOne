@@ -1,3 +1,4 @@
+import { foodService } from '../services/api';
 import type { TMBResult as TMBResultType } from '../types/index';
 import './TMBResult.css';
 
@@ -8,6 +9,16 @@ interface TMBResultProps {
 
 export function TMBResult({ result, onReset }: TMBResultProps) {
   const tmbValue = Math.round(result.tmb);
+
+  const handleSetGoal = async (calories: number) => {
+    try {
+      await foodService.setCalorieGoal(calories);
+      alert('Meta atualizada com sucesso! Vá para "Log Diário" para acompanhar.');
+    } catch (err) {
+      alert('Erro ao atualizar meta.');
+    }
+  };
+
   const activityMultipliers = {
     sedentary: {
       name: 'Sedentário',
@@ -41,6 +52,9 @@ export function TMBResult({ result, onReset }: TMBResultProps) {
         </div>
 
         <p className="result-description">{result.message}</p>
+        <button className="set-goal-btn" onClick={() => handleSetGoal(tmbValue)}>
+          Definir como meta
+        </button>
       </div>
 
       <div className="activity-multipliers">
@@ -54,6 +68,9 @@ export function TMBResult({ result, onReset }: TMBResultProps) {
                 <p className="activity-description">{description}</p>
                 <p className="activity-calories">{calories} kcal</p>
                 <span className="multiplier-factor">×{multiplier}</span>
+                <button className="set-goal-btn-small" onClick={() => handleSetGoal(calories)}>
+                  Usar esta meta
+                </button>
               </div>
             );
           })}

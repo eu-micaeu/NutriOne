@@ -1,14 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TMBForm } from '../components/TMBForm';
 import { TMBResult } from '../components/TMBResult';
 import { ErrorAlert } from '../components/ErrorAlert';
 import { useTMB } from '../hooks/useTMB';
-import type { TMBFormData } from '../types/index';
+import type { TMBFormData, User } from '../types/index';
 import './Calculator.css';
 
-export function Calculator() {
+interface CalculatorProps {
+  user?: User | null;
+}
+
+export function Calculator({ user }: CalculatorProps) {
   const { loading, error, result, calculateTMB, clearResult } = useTMB();
   const [dismissedError, setDismissedError] = useState(false);
+
+  useEffect(() => {
+    if (user && !result) {
+      // Calcular automaticamente com dados do usuário
+      calculateTMB({
+        weight: user.weight,
+        height: user.height,
+        age: user.age,
+        gender: user.gender as 'male' | 'female'
+      });
+    }
+  }, [user]);
 
   const handleSubmit = async (data: TMBFormData) => {
     setDismissedError(false);

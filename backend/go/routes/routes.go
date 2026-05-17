@@ -26,9 +26,20 @@ func SetupRoutes(router *gin.Engine) {
 			tmbGroup.POST("/calculate", nutritionController.CalculateTMB)
 		}
 
+		userGroup := apiGroup.Group("/user")
+		{
+			userGroup.POST("/register", nutritionController.RegisterUser)
+			userGroup.POST("/login", nutritionController.Login)
+			userGroup.GET("/profile", nutritionController.GetProfile)
+		}
+
 		foodGroup := apiGroup.Group("/food")
 		{
 			foodGroup.POST("/analyze", nutritionController.AnalyzeFoodPhoto)
+			foodGroup.GET("/log", nutritionController.GetDailyLog)
+			foodGroup.POST("/log", nutritionController.AddFoodEntry)
+			foodGroup.DELETE("/log/:id", nutritionController.DeleteFoodEntry)
+			foodGroup.POST("/goal", nutritionController.SetCalorieGoal)
 		}
 	}
 }
